@@ -83,6 +83,22 @@ class ReglaValidacionGanimedes (ReglaValidacion):
     def es_valida(self, clave: str) -> bool:
         ...
 
+class ReglaValidacionCalisto(ReglaValidacion):
+
+    def __init__(self, longitud_esperada: int):
+        super().__init__(longitud_esperada)
+
+    def contiene_calisto(self, clave: str) -> bool:
+        self.clave: str = clave
+
+        palabra = "calisto"
+
+        if palabra == "calisto".lower():
+            return  True
+
+    def es_valida(self, clave: str) -> bool:
+        ...
+
 
 
 
