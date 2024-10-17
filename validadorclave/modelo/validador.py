@@ -50,6 +50,38 @@ class ReglaValidacion(ABC):
 
         return True
 
+class Validador(ReglaValidacion):
+
+    def __init__(self, regla: ReglaValidacion, longitud_esperada: int):
+        super().__init__(longitud_esperada)
+        self.regla: ReglaValidacion = regla
+
+    def es_valida(self, clave: str) -> bool:
+        ...
+
+class ReglaValidacionGanimedes (ReglaValidacion):
+
+    def __init__(self, longitud_esperada: int):
+        super().__init__(longitud_esperada)
+
+    def contiene_caracter_especial(self, clave: str) -> bool:
+        self.clave: str = clave
+
+        caracteres_especiales = '1. @\
+                                2. _\
+                                3. #\
+                                4. $\
+                                5. %'
+
+        if not caracteres_especiales in clave:
+            return True
+
+        else:
+            return False
+
+
+    def es_valida(self, clave: str) -> bool:
+        ...
 
 
 
