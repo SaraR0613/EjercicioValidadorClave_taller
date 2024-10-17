@@ -98,8 +98,3 @@ class ReglaValidacionCalisto(ReglaValidacion):
 
     def es_valida(self, clave: str) -> bool:
         ...
-
-
-
-
-
